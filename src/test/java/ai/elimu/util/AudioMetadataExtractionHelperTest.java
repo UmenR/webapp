@@ -21,7 +21,7 @@ public class AudioMetadataExtractionHelperTest {
     @Test
     public void testGetDurationInMilliseconds() throws IOException {
         ResourceLoader resourceLoader = new ClassRelativeResourceLoader(AudioMetadataExtractionHelper.class);
-        Resource resource = resourceLoader.getResource("example.mp3");
+        Resource resource = resourceLoader.getResource("fourteen.mp3");
         File audioFile = resource.getFile();
         logger.debug("audioFile: " + audioFile);
         
