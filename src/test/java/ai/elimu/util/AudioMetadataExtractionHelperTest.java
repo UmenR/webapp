@@ -21,13 +21,13 @@ public class AudioMetadataExtractionHelperTest {
     @Test
     public void testGetDurationInMilliseconds() throws IOException {
         ResourceLoader resourceLoader = new ClassRelativeResourceLoader(AudioMetadataExtractionHelper.class);
-        Resource resource = resourceLoader.getResource("fourteen.mp3");
+        Resource resource = resourceLoader.getResource("example.mp3");
         File audioFile = resource.getFile();
         logger.debug("audioFile: " + audioFile);
         
         InputStream inputStream = new FileInputStream(audioFile);
         Long durationMs = AudioMetadataExtractionHelper.getDurationInMilliseconds(audioFile);
         assertThat(durationMs, not(nullValue()));
-        assertThat(durationMs, is(2000L)); // 00:00.961
+        assertThat(durationMs, is(1000L)); // 00:00.961
     }
 }
