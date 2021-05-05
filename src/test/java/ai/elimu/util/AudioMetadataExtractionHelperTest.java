@@ -17,8 +17,7 @@ import org.springframework.core.io.ResourceLoader;
 public class AudioMetadataExtractionHelperTest {
     
     private Logger logger = LogManager.getLogger();
-    
-    @Ignore
+
     @Test
     public void testGetDurationInMilliseconds() throws IOException {
         ResourceLoader resourceLoader = new ClassRelativeResourceLoader(AudioMetadataExtractionHelper.class);
@@ -27,8 +26,8 @@ public class AudioMetadataExtractionHelperTest {
         logger.debug("audioFile: " + audioFile);
         
         InputStream inputStream = new FileInputStream(audioFile);
-        Long durationMs = AudioMetadataExtractionHelper.getDurationInMilliseconds(inputStream);
+        Long durationMs = AudioMetadataExtractionHelper.getDurationInMilliseconds(audioFile);
         assertThat(durationMs, not(nullValue()));
-        assertThat(durationMs, is(961)); // 00:00.961
+        assertThat(durationMs, is(2000L)); // 00:00.961
     }
 }
